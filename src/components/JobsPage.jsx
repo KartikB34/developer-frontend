@@ -29,7 +29,7 @@ const JobsPage = (e) => {
     } ,[]);
     return (
 
-        <div className="pt-16">
+        <div className="pt-4">
             <div className="text-white p-4 max-w-7xl m-auto">
                 <div className="text-white text-lg bg-gray-400 flex justify-center items-center  p-2 w-fit border rounded-md">Discover Jobs</div>
                 <div className="mt-3 flex flex-wrap gap-3">

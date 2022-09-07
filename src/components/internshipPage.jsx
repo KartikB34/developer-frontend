@@ -1,4 +1,3 @@
-import { Container, Box, makeStyles } from '@material-ui/core';
 import React, { useEffect, useState } from 'react'
 import InternshipCard from './internships/Internship-Card';
 import JobCardLoading from './Job-Card/JobCardLoading';
@@ -27,9 +26,9 @@ const InternshipPage = () => {
         });
     } ,[]);
     return (
-        <div className="bg-gray-800 pt-16">
-        <div className="text-white bg-gray-800 p-4 max-w-7xl m-auto">
-            <div className="text-white text-lg bg-gray-800 p-2 w-fit border rounded-md">Discover Internships</div>
+        <div className=" pt-4">
+        <div className="text-white p-4 max-w-7xl m-auto">
+            <div className="text-white text-lg bg-gray-400 p-2 w-fit border rounded-md">Discover Internships</div>
             <div className="mt-3 flex flex-wrap gap-3">
                 {
                     loading === true ?

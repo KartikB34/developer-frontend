@@ -26,7 +26,7 @@ const JobCard = (props) => {
                 <div><span className="font-bold text-black">{props.exp}</span>{" "}experience</div>
             </div>
             <div className='text-gray-600'>
-                <button onClick={handleApply} className="px-3 py-2 hover:text-white border rounded-md hover:bg-[#003979]">Details</button>
+                <button onClick={handleApply} className="px-3 py-2 hover:text-white border border-[#003979] rounded-md hover:bg-[#003979]">Details</button>
             </div>
         </div>
     </div>

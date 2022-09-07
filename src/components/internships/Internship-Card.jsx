@@ -1,9 +1,5 @@
 import React from 'react';
-import { Box, Paper, Typography, Button, makeStyles, CardActions } from '@material-ui/core';
-import { Edit, Delete } from "@material-ui/icons";
-import Axios from 'axios';
 import { Link, useNavigate } from "react-router-dom";
-import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const InternshipCard = (props) => {
@@ -16,19 +12,19 @@ const InternshipCard = (props) => {
   }
 
   return (
-    <div className="min-h-min flex flex-col justify-between grow shrink basis-80 py-3 px-2 border border-gray-500 rounded-lg">
+    <div className="min-h-min bg-gray-200 flex flex-col justify-between grow shrink basis-80 py-3 px-2 border border-gray-500 rounded-lg">
         <div>
-            <div className="text-lg sm:text-xl font-semibold">{props.position}</div>
-            <div className="mt-1">{props.cmp}</div>
-            <div className="mt-2 text-gray-400">{(props.responsibilities).substr(0, 120)}...</div>
+            <div className="text-lg sm:text-xl font-semibold text-[#003979]">{props.position}</div>
+            <div className="mt-1 text-[#003979]">{props.cmp}</div>
+            <div className="mt-2 text-gray-600">{(props.responsibilities).substr(0, 120)}...</div>
         </div>
         <div className="mt-2 flex justify-between items-center">
-            <div className="text-gray-400">
-                <div><span className="font-bold text-white">{props.opn}</span>{" "}openings</div>
-                <div><span className="font-bold text-white">{props.duration}</span>{" "}duration</div>
+            <div className="text-gray-600">
+                <div><span className="font-bold text-black">{props.opn}</span>{" "}openings</div>
+                <div><span className="font-bold text-black">{props.duration}</span>{" "}duration</div>
             </div>
-            <div>
-                <button onClick={handleApply} className="px-3 py-2 border rounded-md hover:bg-gray-600">Details</button>
+            <div className='text-gray-600'>
+                <button onClick={handleApply} className="px-3 py-2 border border-[#003979] hover:text-white rounded-md hover:bg-[#003979]">Details</button>
             </div>
         </div>
     </div>

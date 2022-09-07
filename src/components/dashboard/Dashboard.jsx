@@ -7,6 +7,7 @@ import Yourjobs from "./yourjobs/YourJobs"
 import Addjob from "./addJob/Addjob"
 
 import JobsPage from "../JobsPage";
+import InternshipPage from "../internshipPage";
 
 const Dashboard = ({buisnessDetails}) => {
 
@@ -21,7 +22,7 @@ const Dashboard = ({buisnessDetails}) => {
           {/* <DashHome /> */}
           {/* {option === "User Dashboard" && <DashHome buisnessDetails={buisnessDetails} setOption={setOption}/>} */}
           {option === "Jobs" && <JobsPage buisnessDetails={buisnessDetails} setOption={setOption}/>}
-          {/* {option === "Posted Internships" && <Yourinternships buisnessDetails={buisnessDetails} setOption={setOption}/>} */}
+          {option === "Internships" && <InternshipPage buisnessDetails={buisnessDetails} setOption={setOption}/>}
           {/* {option === "Add job" && <Addjob/>} */}
         </div>
       </div>

@@ -61,20 +61,20 @@ const Sidebar = ({ option, setOption }) => {
 
 
         <div
-          onClick={() => {setOption("Posted Internships")}}
+          onClick={() => {setOption("Internships")}}
           className={`w-full flex items-center justify-start space-x-8 px-4 cursor-pointer group hover:border-gray-900 border-l-4 border-transparent ${
-          option === "Posted Internships" && "border-gray-900"
+          option === "Internships" && "border-gray-900"
           }`}
         >
-          <span className={`${option === "Posted Internships"? "text-[#003979]" : "text-gray-600"}`} >
+          <span className={`${option === "Internships"? "text-black font-semibold" : "text-gray-600"}`} >
             <BsBriefcase className="nav-icon" />
           </span>
           <h1
             className={` group-hover:text-black xl:flex hidden ${
-              option === "Posted Internships"? "text-[#003979]" : "text-gray-600" 
+              option === "Internships"? "text-black font-semibold" : "text-gray-600" 
             }`}
           >
-            Your Internships
+            Internships
           </h1>
         </div>
 
