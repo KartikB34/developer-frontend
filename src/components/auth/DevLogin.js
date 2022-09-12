@@ -159,12 +159,12 @@ const Login = ({ setCookie }) => {
         </div>
         </div>
         <div className='w-full md:w-2/5 md:h-[492px] bg-[#003979] text-white px-12 py-36'>  {/* signup Section */}
-            <h2 className='text-3xl text-white font-bold mb-2'>Hello, company!</h2>
+            <h2 className='text-3xl text-white font-bold mb-2'>Hello, developer!</h2>
             <div className='border-4 w-10 border-white inline-block mb-2' />
             <div className='90%'>
-              <p className='text-xl mb-3'>Post jobs and internships for your company</p>
-              <p className='text-xl mb-6'>Hire our trained and skilled WEB3 developers</p>
-              <p className='mb-10'>Fill up company info and start journey with us!</p>
+              <p className='text-xl mb-3'>Looking for career in WEB3 development?</p>
+              <p className='text-xl mb-6'>Many companies and startups has poster different jobs and internship for WEB3 developers !</p>
+              <p className='mb-10'>Sign up now and start your journey with us!</p>
             </div>
             <a href='/dev-signup' className='border-2 border-white font-semibold rounded-full px-12 py-2 inline-block hover:bg-white hover:text-[#003979]'>SignUp</a>
         </div>

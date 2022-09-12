@@ -17,7 +17,7 @@ const Discord = () => {
   );
   return (
     <>
-      <section className=" bg-discord w-full h-[340px] hidden  md:flex flex-col items-center justify-center bg-opacity-0 md:bg-opacity-100 ">
+      <section className=" bg-blue-500 w-full h-[340px] hidden  md:flex flex-col items-center justify-center bg-opacity-0 md:bg-opacity-100 ">
         {title}
         {button}
       </section>
