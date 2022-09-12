@@ -80,7 +80,7 @@ const Sidebar = ({ option, setOption }) => {
 
 
 
-        <div
+        {/* <div
           onClick={() => {setOption("Add job")}}
           className={`w-full flex items-center justify-start space-x-8 px-4 cursor-pointer group hover:border-gray-900 border-l-4 border-transparent ${
           option === "Add job" && "border-gray-900"
@@ -96,7 +96,7 @@ const Sidebar = ({ option, setOption }) => {
           >
             Add job
           </h1>
-        </div>
+        </div> */}
 
 
 

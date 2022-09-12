@@ -1,10 +1,12 @@
 import React,{useState, useEffect} from 'react'
+import { useNavigate } from "react-router-dom";
 import Axios from 'axios';
 
 const Jobcard = ({setOption}) => {
 
   const [dataArr, setDataArr] = useState([]);
     const [loading, setLoading] = useState(false);
+    const navigate = useNavigate();
     // const [datarr, setDataArr] = React.useState([]);
 
 
@@ -26,12 +28,16 @@ const Jobcard = ({setOption}) => {
         });
     } ,[]);
 
+  //   const handleApply = ({srId}) => {
+  //     navigate(`/jobapplication?id=${srId}&type=job`)                  //onClick={handleApply(job._id)}
+  // }
+
   return (
     <div>
-      <div className="p-5 my-6 shadow-xl bg-gray-100">
-       <h1 className="text-xl mb-2">Your Jobs</h1>
+      <div className="p-4 my-6 shadow-xl bg-gray-100">
+       <h1 className="text-xl mb-2">Latest Jobs</h1>
  
-      <div className="overflow-auto w-[560px] rounded-lg shadow hidden md:block">
+      <div className="overflow-auto w-[660px] rounded-lg shadow hidden md:block">
       <table className="w-full">
         
         <thead className="bg-gray-50 border-b-2 border-gray-200">
@@ -39,7 +45,7 @@ const Jobcard = ({setOption}) => {
           <th className="w-20 p-3 text-sm font-semibold tracking-wide text-left">Job title</th>
           <th className="p-3 text-sm font-semibold tracking-wide text-left">Posted on</th>
           <th className="w-24 p-3 text-sm font-semibold tracking-wide text-left">CTC</th>
-          <th className="w-24 p-3 text-sm font-semibold tracking-wide text-left">Status</th>
+          <th className="w-24 p-3 text-sm font-semibold tracking-wide text-left">Details</th>
         </tr>
         </thead>
 
@@ -52,16 +58,20 @@ const Jobcard = ({setOption}) => {
           </td>
           <td className="p-3 text-sm text-gray-700 whitespace-nowrap">{job.postedOn.split("T")[0]}</td>
           <td className="p-3 text-sm text-gray-700 whitespace-nowrap">{job.ctc}</td>
-          <td className="p-3 text-sm text-gray-700 whitespace-nowrap">
+          <td className="p-3 text-sm text-gray-700 whitespace-nowrap bg-white">
           <span
-            className={`p-1.5 text-xs font-medium uppercase tracking-wider text-gray-800 bg-gray-200 ${job.status === "Completed" && "text-green-800 bg-green-200"} rounded-lg bg-opacity-50`}>{job.status}</span>
+            className={`text-xs font-medium uppercase tracking-wider text-gray-800 rounded-lg bg-opacity-50`}>
+            <div className='text-white'>
+                <button className="px-3 py-2 hover:text-[#003979] border border-[#003979] rounded-md bg-[#003979] hover:bg-white">Details</button>
+            </div>
+          </span>
           </td>
         </tr>
         </tbody>
 
         ))}
       </table>
-      {dataArr.jobsAdded.length===0?<div className='text-center my-4'>You have not yet posted any Job</div>:<></>}
+      {/* {dataArr.jobsAdded.length===0?<div className='text-center my-4'>You have not yet posted any Job</div>:<></>} */}
     </div>
  
     <div className="flex flex-col w-full md:hidden">
@@ -79,16 +89,20 @@ const Jobcard = ({setOption}) => {
         </div>
           <div>
             <span
-              className={`p-1.5 text-xs font-medium uppercase tracking-wider text-gray-800 bg-gray-200 ${job.status === "Completed" && "text-green-800 bg-green-200"} rounded-lg bg-opacity-50`}>{job.status}</span>
+              className={`p-1.5 text-xs font-medium uppercase tracking-wider text-gray-800 bg-gray-200 rounded-lg bg-opacity-50`}>
+              <div className='text-white'>
+                <button className="px-3 py-2 hover:text-[#003979] border border-[#003979] rounded-md bg-[#003979] hover:bg-white">Details</button>
+              </div>
+            </span>
           </div>
       </div>
     ))}
 
-    {dataArr.internshipsAdded.length===0?<div className='text-center my-4'>You have not yet posted any jobs</div>:<></>}
+    {/* {dataArr.internshipsAdded.length===0?<div className='text-center my-4'>You have not yet posted any jobs</div>:<></>} */}
       
     </div>
     <div className='w-full my-2 flex items-end relative'>
-      {dataArr.jobsAdded.length===0?<></>:<div onClick={() => {setOption("Posted Jobs")}} className='text-red-400 right-5 top-1 absolute hover:cursor-pointer'>see all..</div>}
+      <div onClick={() => {setOption("Jobs")}} className='text-red-400 right-5 top-1 absolute hover:cursor-pointer'>see all..</div>
     </div>
    </div>
     </div>

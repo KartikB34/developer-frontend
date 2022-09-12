@@ -6,7 +6,7 @@ const DashHome = ({setOption}) => {
   return (
     <div className=' w-fll flex flex-col items-center'>
       <Jobcard setOption={setOption}  />
-      {/* <Internshipcard  /> */}
+      <Internshipcard setOption={setOption} />
     </div>
   )
 }

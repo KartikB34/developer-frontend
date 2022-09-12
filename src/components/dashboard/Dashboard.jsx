@@ -7,7 +7,7 @@ import DashHome from "./dashhome/DashHome";
 
 const Dashboard = () => {
 
-  const [option, setOption] = useState("Jobs")
+  const [option, setOption] = useState("Jobs")              // chanage this to User Dashboard
 
   return (
     <div>
@@ -16,7 +16,7 @@ const Dashboard = () => {
         
         <div className="w-[100%]">
           {/* <DashHome /> */}
-          {option === "dashboard" && <DashHome setOption={setOption}/>}
+          {option === "User Dashboard" && <DashHome setOption={setOption}/>}
           {/* {option === "User Dashboard" && <DashHome buisnessDetails={buisnessDetails} setOption={setOption}/>} */}
           {option === "Jobs" && <JobsPage setOption={setOption}/>}
           {option === "Internships" && <InternshipPage setOption={setOption}/>}
