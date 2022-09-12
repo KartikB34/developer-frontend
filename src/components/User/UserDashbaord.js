@@ -91,11 +91,11 @@ const Profile = () => {
       <br/>
       <br/>
       <div className="gap-1 text-white max-w-7xl m-auto p-2 block md:flex">
-          <div className="mt-6 w-100 md:w-4/12 gap-2">
+          <div className=" w-100 md:w-4/12 gap-2">
               <BasicUserDetails user={user} token={token} />
               <UserCommunityDetails />
           </div>
-          <div className="mt-6 w-100 text-gray-400 md:w-8/12">
+          <div className="w-100 text-gray-400 md:w-8/12">
               <button onClick={()=>setActiveTab(1)} className={`${activeTab===1 && 'bg-[#003979] text-white'} font-bold m-2 border-[#003979] border text-xs p-2 rounded`}>Applications</button>
               <button onClick={()=>setActiveTab(2)} className={`${activeTab===2 && 'bg-[#003979] text-white'} font-bold m-2 border-[#003979] border text-xs p-2 rounded`}>Projects</button>
               <button onClick={()=>setActiveTab(3)} className={`${activeTab===3 && 'bg-[#003979] text-white'} font-bold m-2 border-[#003979] border text-xs p-2 rounded`}>Security</button>

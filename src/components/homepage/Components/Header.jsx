@@ -6,9 +6,27 @@ import {CgProfile} from "react-icons/cg"
 import "./header.scss"
 import {MdOutlineSpaceDashboard, MdLogout} from 'react-icons/md';
 import {AiFillCaretDown, AiOutlineUser} from 'react-icons/ai'
+
+import logo from "../Assets/logo.png"
 const drawerWidth = 340;
 
 const Header = () => {
+
+
+  const [color, setColor] = useState(false);
+
+  const changeColor = () => {
+    if(window.scrollY >=90){
+      setColor(true)
+    }
+    else{
+      setColor(false)
+    }
+  }
+
+  window.addEventListener('scroll',changeColor)
+
+
 
   const API = process.env.REACT_APP_API_ENDPOINT;
   const navigate = useNavigate();
@@ -82,11 +100,11 @@ const Header = () => {
   }, [token]);
 
   return(
-    <nav className="w-full top-0 bg-gray-300 shadow-md fixed text-gray-600">
+    <nav className={`w-full top-0 ${color?"bg-gray-300":"bg-gray-200"} shadow-md fixed text-gray-600`}>
             <div className="relative py-3 px-3 sm:px-5 flex flex-row items-center justify-between max-w-7xl m-auto nav_container">
                 <div onClick={gotohome} className="cursor-pointer">
                     <img className="h-8 w-35 sm:h-10 sm:w-40"
-                       src="https://i.ibb.co/kQmGYgB/crypto-final-logo-png-14-1.png"
+                       src={logo}
                        alt="brand-image" />
                 </div>
                 <div>
