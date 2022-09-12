@@ -42,21 +42,21 @@ const Security = ({token, user}) => {
     }
 
   return (
-    <div className="bg-gray-900 p-2 rounded h-screen">
-        <div className="text-lg flex items-center"><div className='w-2 h-2 mr-2 bg-white rounded-full'></div>Change your password</div>
+    <div className="bg-gray-300 p-2 rounded h-screen">
+        <div className="text-lg text-gray-700 flex items-center"><div className='w-2 h-2 mr-2 bg-gray-600 rounded-full'></div>Change your password</div>
         <div className='mt-3 ml-2'>
             <form onSubmit={handleSubmit}>
             <div className="flex flex-col">
-                <label className="text-sm mb-1 text-white dark:text-gray-400">Current Password</label>
+                <label className="text-sm mb-1 text-gray-700">Current Password</label>
                 <input type="password"
-                    className="px-2 text-sm text-white bg-gray-700 w-1/2 h-10 focus:outline-none rounded"
+                    className="px-2 text-sm text-white bg-gray-600 w-1/2 h-10 focus:outline-none rounded"
                     value={currentPassword}
                     onChange={(e)=>setCurrentPassword(e.target.value)} />
             </div>
             <div className="flex flex-col mt-2">
-                <label className="pl-1 text-sm mb-1 text-white dark:text-gray-400">New Password</label>
+                <label className="pl-1 text-sm mb-1 text-gray-700">New Password</label>
                 <input type="password"
-                    className="px-2 text-sm text-white bg-gray-700 w-1/2 h-10 focus:outline-none rounded"
+                    className="px-2 text-sm text-white bg-gray-600 w-1/2 h-10 focus:outline-none rounded"
                     value={newPassword}
                     onChange={(e)=>setNewPassword(e.target.value)} />
             </div>

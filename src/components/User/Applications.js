@@ -11,16 +11,16 @@ const UserApplicationsDetails = ({appliedAtJobs, appliedAtInternships}) =>{
     // console.log(appliedAtJobs)
 
     return(<>
-    <div className="bg-gray-900 p-2 rounded ">
-        <span>Your Applications</span>
+    <div className="bg-gray-300 p-2 rounded ">
+        <span className="text-gray-700">Your Applications</span>
 
-        <div className="flex gap-4 mt-2">
+        <div className="flex gap-4 mt-2 text-gray-700">
             <button 
-                className={`rounded p-1 text-xs text-center w-full ${activeTab===1 && 'bg-gray-700'} hover:bg-gray-700`}
+                className={`rounded p-1 text-xs text-center w-full ${activeTab===1 && 'bg-gray-700 text-white'} hover:text-white hover:bg-gray-700`}
                 onClick={()=>setActiveTab(1)}
             >Jobs</button>
             <button 
-                className={`rounded p-1 text-xs text-center w-full ${activeTab===2 && 'bg-gray-700'} hover:bg-gray-700`}
+                className={`rounded p-1 text-xs text-center w-full ${activeTab===2 && 'bg-gray-700 text-white'} hover:text-white hover:bg-gray-700`}
                 onClick={()=>setActiveTab(2)}
             >Internships</button>
         </div>
@@ -28,7 +28,7 @@ const UserApplicationsDetails = ({appliedAtJobs, appliedAtInternships}) =>{
         {activeTab===1 && <div className="mt-3 flex flex-col gap-3 overflow-y-auto h-screen">
             {
                 (appliedAtJobs?.length === 0 || appliedAtJobs===undefined) ?
-                    <span className="w-full text-center text-cyan-500 mt-2">You have'nt applied to any jobs yet :{`(`} </span> :
+                    <span className="w-full text-center text-gray-700 mt-2">You have'nt applied to any jobs yet :{`(`} </span> :
                     null
                 }
             {
@@ -52,7 +52,7 @@ const UserApplicationsDetails = ({appliedAtJobs, appliedAtInternships}) =>{
         {activeTab===2 && <div className="mt-3 flex flex-col gap-3 overflow-y-auto h-screen">
             {
                 (appliedAtInternships?.length === 0 || appliedAtInternships===undefined) ?
-                    <span className="w-full text-center text-cyan-500 mt-2">You have'nt applied to any internships yet :{`(`} </span> :
+                    <span className="w-full text-center text-gray-700 mt-2">You have'nt applied to any internships yet :{`(`} </span> :
                     null
                 }
             {

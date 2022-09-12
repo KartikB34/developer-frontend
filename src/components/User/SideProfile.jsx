@@ -56,10 +56,10 @@ const SideProfile = (props) => {
   }, [github_username])
 
   return (
-    <div className="bg-gray-900 p-2 rounded h-screen">
-      <div className="flex justify-center items-center">
+    <div className="bg-gray-300 p-2 rounded h-screen">
+      <div className="flex justify-center text-gray-700 items-center">
         {/* <FiGithub />  */}
-        <span className="ml-2">Your <span className="underline underline-offset-4 text-cyan-600">GitHub</span> Projects</span>
+        <span className="ml-2">Your <span className="underline underline-offset-4 text-black">GitHub</span> Projects</span>
       </div>
 
       {
@@ -71,27 +71,27 @@ const SideProfile = (props) => {
           <ProjectLoadingCard />
         </> :
         (userResume === null || userResume.links.github === "")  ?
-        <div className="text-center mt-2">Update your profile</div> :
+        <div className="text-center text-gray-700 mt-2">Update your profile</div> :
         <div className="mt-2">
           {
             projects.projectslist.map((project, key)=>{
               return (
               <div className="p-2 border-b mb-2">
-                <div>{project.repo}</div>
+                <div className="text-gray-700">{project.repo}</div>
                 <div className="flex justify-between">
                   <div className="flex items-center">
-                    <BiGitRepoForked /> <span className="text-gray-400 text-sm mr-2">{project.forks}</span>
-                    <AiOutlineStar /> <span className="text-gray-400 text-sm">{project.stars}</span>
+                    <BiGitRepoForked className="text-gray-700"/> <span className="text-gray-700 text-sm mr-2">{project.forks}</span>
+                    <AiOutlineStar className="text-gray-700"/> <span className="text-gray-700 text-sm">{project.stars}</span>
                   </div>
                   <div className="flex items-center">
                     {
                       project.website === undefined ? null :
-                      <a href={project.website}><RiLinksFill /></a>
+                      <a href={project.website}><RiLinksFill className="text-gray-700"/></a>
                     }
-                    <a href={project.link} className="ml-2"><FiGithub /></a>
+                    <a href={project.link} className="ml-2"><FiGithub className="text-gray-700"/></a>
                   </div>
                 </div>
-                <div className="text-gray-400 text-base">{project.description}</div>
+                <div className="text-gray-700 text-base">{project.description}</div>
               </div>
               )
             })

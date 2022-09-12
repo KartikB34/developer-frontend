@@ -18,7 +18,12 @@ const Profile = () => {
 
   const [cookies, setCookie, removeCookie] = useCookies(['token']);
 
-  const token = cookies.token;
+  // const token = cookies.token;
+  const login = localStorage.getItem("login");
+  const cUser = localStorage.getItem("cUser");
+  const admin = localStorage.getItem("admin");
+  const token = localStorage.getItem("token");
+  const btoken = localStorage.getItem("tokenNew");
 
   const API = process.env.REACT_APP_API_ENDPOINT;
 
@@ -79,7 +84,7 @@ const Profile = () => {
       );
   }
   return(<>
-  <main className="bg-gray-800">
+  <main className="">
       <br/>
       <br/>
       <br/>
@@ -90,10 +95,10 @@ const Profile = () => {
               <BasicUserDetails user={user} token={token} />
               <UserCommunityDetails />
           </div>
-          <div className="mt-6 w-100 md:w-8/12">
-              <button onClick={()=>setActiveTab(1)} className={`${activeTab===1 && 'bg-blue-800'} font-bold m-2 text-white text-xs p-2 rounded`}>Applications</button>
-              <button onClick={()=>setActiveTab(2)} className={`${activeTab===2 && 'bg-blue-800'} font-bold m-2 text-white text-xs p-2 rounded`}>Projects</button>
-              <button onClick={()=>setActiveTab(3)} className={`${activeTab===3 && 'bg-blue-800'} font-bold m-2 text-white text-xs p-2 rounded`}>Security</button>
+          <div className="mt-6 w-100 text-gray-400 md:w-8/12">
+              <button onClick={()=>setActiveTab(1)} className={`${activeTab===1 && 'bg-[#003979] text-white'} font-bold m-2 border-[#003979] border text-xs p-2 rounded`}>Applications</button>
+              <button onClick={()=>setActiveTab(2)} className={`${activeTab===2 && 'bg-[#003979] text-white'} font-bold m-2 border-[#003979] border text-xs p-2 rounded`}>Projects</button>
+              <button onClick={()=>setActiveTab(3)} className={`${activeTab===3 && 'bg-[#003979] text-white'} font-bold m-2 border-[#003979] border text-xs p-2 rounded`}>Security</button>
               
               {activeTab===1 && <UserApplicationsDetails
                   appliedAtJobs={user.appliedAtJobs} 

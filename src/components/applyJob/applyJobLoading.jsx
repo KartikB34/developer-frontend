@@ -2,8 +2,8 @@ import React from 'react'
 
 const ApplyJobLoading = () => {
   return (
-    <div className='w-full bg-gray-800 text-white'>
-        <div className="animate-pulse px-3 pt-28 mx-auto w-full max-w-4xl md:px-0 pb-5">
+    <div className='w-full text-black '>
+        <div className="animate-pulse px-3 mx-auto w-full max-w-4xl md:px-0 pb-5">
           <div className='w-1/3 h-4 rounded-sm bg-gray-300'></div>
           <div className='mt-1 w-1/4 h-3 rounded-sm bg-gray-300'></div>
           <div className='mt-3 w-1/4 h-3 rounded-sm bg-gray-300 '></div>

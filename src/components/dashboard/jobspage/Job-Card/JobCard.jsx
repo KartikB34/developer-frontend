@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, Navigate, useNavigate } from "react-router-dom";
 // import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import {GrLocation} from "react-icons/gr"
+import {MdLocationOn} from "react-icons/md"
 
 const JobCard = (props) => {
 
@@ -22,8 +22,8 @@ const JobCard = (props) => {
                 <div className="mt-1 text-gray-500">{props.cmp}</div>
                 <div className="text-lg text-black sm:text-xl mb-2 font-semibold">{props.position}{" ("}{props.exp}{" "}exp{")"}</div>
                 <div className='text-black flex mb-2'>
-                    <div className='flex items-center'><GrLocation className='text-[#003979] fill-[#003979] mr-1' /><p className='text-sm mr-2'>{props.loc}</p></div>
-                    <div className='flex items-center'><p className='text-sm'> INR{" "}{props.sal}</p></div>
+                    <div className='flex items-center'><MdLocationOn className='text-[#003979] h-10 fill-[#003979] mr-1' /><p className='text-sm mr-2'>{props.loc}</p></div>
+                    <div className='flex items-center'><p className='text-sm mr-1 font-semibold text-[#003979]'> INR</p>{" "}<p>{props.sal}</p></div>
                 </div>
             </div>
 

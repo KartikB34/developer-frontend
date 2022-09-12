@@ -5,7 +5,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {FiHome} from 'react-icons/fi';
 import {HiOutlineLocationMarker} from 'react-icons/hi'
-import {MdOutlineOutbond, MdPeopleOutline, MdDateRange, MdMapsHomeWork} from 'react-icons/md'
+import {MdOutlineOutbond, MdPeopleOutline, MdDateRange, MdMapsHomeWork, MdArrowBackIos} from 'react-icons/md'
 import {GiMoneyStack} from 'react-icons/gi'
 import {BiLinkExternal} from 'react-icons/bi'
 import ApplyJobLoading from './applyJobLoading';
@@ -144,18 +144,24 @@ const ApplyJob = (props) => {
   }
 
   return (
-    <div className='w-full bg-gray-800 text-white'>
+    <div className='w-full pt-12'>
     {
       jobInfo && stage === 1 ? 
-        <div className="px-3 pt-28 mx-auto w-full max-w-4xl md:px-0 pb-5">
+        <div className="px-3 mx-auto w-full max-w-4xl md:px-0 pb-5">
           <div className='text-2xl'>
+            <a href="/dashboard">
+              <div className='flex mb-4 items-center'>
+                <MdArrowBackIos className='h-6' />
+                <p className='text-lg'>back</p>
+              </div>
+            </a>
             {
             jobtype === 'job' ? 
               <>{jobInfo.jobTitle}</> :
               <>{jobInfo.internshipTitle}</>
             }
           </div>
-          <div className='text-base text-gray-300 flex items-center'><MdMapsHomeWork/><span className='ml-1.5'>{jobInfo.postedByDetails.companyName}</span></div>
+          <div className='text-base text-gray-600 flex items-center'><MdMapsHomeWork/><span className='ml-1.5'>{jobInfo.postedByDetails.companyName}</span></div>
           <div className='mt-3 flex items-center'>
             {
               jobInfo.isRemote === true ?
@@ -169,13 +175,13 @@ const ApplyJob = (props) => {
             <div className='flex items-center justify-between mt-2'>
               <div className='flex flex-col items-start justify-center'>
                 <div className='flex items-center'><GiMoneyStack/><p className='ml-1'>CTC</p></div>
-                <div className='text-sm text-gray-300'>
+                <div className='text-sm text-gray-600'>
                   {(jobInfo.ctc)?.toLocaleString('en-US',{style:'currency', currency:'INR'})}
                 </div>
               </div>
               <div className='flex flex-col items-start justify-center'>
                 <div className='flex items-center'><MdOutlineOutbond /><p className='ml-1'>Fixed Pay</p></div>
-                <div className='text-sm text-gray-300'>
+                <div className='text-sm text-gray-600'>
                   {
                     jobInfo.fixedPay !== undefined ?
                     <>{jobInfo.fixedPay}</> :
@@ -185,32 +191,32 @@ const ApplyJob = (props) => {
               </div>
               <div className='flex flex-col items-start justify-center'>
                 <div className='flex items-center'><MdPeopleOutline/><p className='ml-1'>Applicants</p></div>
-                <div className='text-sm text-gray-300'>{jobInfo.numberOfApplicants}</div>
+                <div className='text-sm text-gray-600'>{jobInfo.numberOfApplicants}</div>
               </div>
             </div> : 
             <div className='flex items-center justify-between mt-2'>
               <div className='flex flex-col items-start justify-center'>
                 <div className='flex items-center'><GiMoneyStack/><p className='ml-1'>Stipend</p></div>
-                <div className='text-sm text-gray-300'>
+                <div className='text-sm text-gray-600'>
                   {(jobInfo.stipend.amount)?.toLocaleString('en-US',{style:'currency', currency:'INR'})}
                 </div>
               </div>
               <div className='flex flex-col items-start justify-center'>
                 <div className='flex items-center'><MdDateRange /><p className='ml-1'>Duration</p></div>
-                <div className='text-sm text-gray-300'>
+                <div className='text-sm text-gray-600'>
                   {jobInfo.duration===""?"NA":jobInfo.duration}
                 </div>
               </div>
               <div className='flex flex-col items-start justify-center'>
                 <div className='flex items-center'><MdPeopleOutline/><p className='ml-1'>Applicants</p></div>
-                <div className='text-sm text-gray-300'>{jobInfo.usersApplied.length}</div>
+                <div className='text-sm text-gray-600'>{jobInfo.usersApplied.length}</div>
               </div>
             </div>
           }
           <div className='mt-3'>
-            <div className='text-sm'>Posted by <span className='text-gray-300'>{jobInfo.postedByDetails.executiveName}</span> on <span className='text-gray-300'>{jobPostedTime[0]}</span></div>
+            <div className='text-sm'>Posted by <span className='text-gray-600'>{jobInfo.postedByDetails.executiveName}</span> on <span className='text-gray-600'>{jobPostedTime[0]}</span></div>
           </div>
-          <div className='w-full my-2 text-gray-300 border-t'></div>
+          <div className='w-full my-2 text-gray-600 border-t'></div>
           <div className='mt-3'>
             <div className='text-xl'>About Company</div>
             {
@@ -224,8 +230,8 @@ const ApplyJob = (props) => {
             }
             {
               jobInfo.postedBy.description === undefined ?
-              <div className='text-base text-gray-300'>NA</div> :
-              <div className='text-base text-gray-300'>{jobInfo.postedBy.description}</div>
+              <div className='text-base text-gray-600'>NA</div> :
+              <div className='text-base text-gray-600'>{jobInfo.postedBy.description}</div>
             }
           </div>
 
@@ -268,13 +274,13 @@ const ApplyJob = (props) => {
             <div className='text-xl'>{jobtype === 'job' ? "Job Description" : "Responsibilities"}</div>
             {
               jobtype === 'job' ?
-              <div className='text-base text-gray-300'>
+              <div className='text-base text-gray-600'>
                 {
                   jobInfo.jobDescription === "" ?
                   "NA" : jobInfo.jobDescription === undefined ? "NA" : <>{jobInfo.jobDescription}</>
                 }
               </div> : 
-              <div className='text-base text-gray-300'>
+              <div className='text-base text-gray-600'>
                 {
                   jobInfo.responsibilities === "" ?
                   "NA" : jobInfo.responsibilities === undefined ? "NA" : <>{jobInfo.responsibilities}</>
@@ -298,26 +304,26 @@ const ApplyJob = (props) => {
 
           <div className='mt-3'>
             <div className='text-xl'>Number of openings</div>
-            <div className='text-base text-gray-300'>{jobInfo.openings}</div>
+            <div className='text-base text-gray-600'>{jobInfo.openings}</div>
           </div>
 
-          <div className='mt-3'>
+          <div className='mt-3 text-white '>
             {
               token ?
               <>
               {
                 applied ?
-                  <button className='px-3 py-1.5 rounded-md bg-blue-800 hover:bg-blue-900'>ALREADY APPLIED</button> :
+                  <button className='px-3 py-1.5 rounded-md border-[#003979] border bg-[#003979] hover:bg-white hover:text-[#003979]'>ALREADY APPLIED</button> :
                   <button onClick={() => {
                     handleStage2();
-                  }} className='px-3 py-1.5 rounded-md bg-blue-800 hover:bg-blue-900'>APPLY</button>
+                  }} className='px-3 py-1.5 rounded-md border-[#003979] border bg-[#003979] hover:bg-white hover:text-[#003979]'>APPLY</button>
                   
               }
               </> :
               <>
                 <button onClick={() => {
                   navigate(`/auth/devlogin?redirectid=${jobid}&redirecttype=${jobtype}`)
-                  }} className='px-3 py-1.5 rounded-md bg-blue-800 hover:bg-blue-900'>LOGIN TO APPLY</button>
+                  }} className='px-3 py-1.5 rounded-md border-[#003979] border bg-[#003979] hover:bg-white hover:text-[#003979]'>LOGIN TO APPLY</button>
               </>
 
             }
@@ -328,28 +334,28 @@ const ApplyJob = (props) => {
 
     {
       stage === 2 ? 
-        <div className='px-3 pt-28 mx-auto w-full max-w-4xl md:px-0 h-screen'>
+        <div className='px-3 pt-12 mx-auto w-full max-w-4xl md:px-0 h-screen'>
           <div className=''>
             <div className='text-2xl flex items-center'>Answer the following to questions to move forward</div>
-            <div className='text-sm text-gray-300'><span className=' text-red-600'>Note: </span>Before applying, make sure you have lastest resume updated in your dashboard.</div>
+            <div className='text-sm text-gray-600'><span className=' text-red-600'>Note: </span>Before applying, make sure you have lastest resume updated in your dashboard.</div>
 
             <div>
               <div class="mt-4">
-                <input required value={whyHire} onChange={(e) => {setWhyHire(e.target.value)}} type="textarea" placeholder='Be creative, think what makes you different.' id='whyhire' className="text-gray-300 w-full bg-transparent border-b py-1 focus:outline-none focus:border-cyan-600 focus:border-b-2 focus:mt-0.5 transition-colors peer" autocomplete="off" />
-                <label for='whyhire' className="text-gray-300 cursor-text text-sm peer-focus:text-cyan-600 transition-all">
+                <input required value={whyHire} onChange={(e) => {setWhyHire(e.target.value)}} type="textarea" placeholder='Be creative, think what makes you different.' id='whyhire' className="text-gray-600 w-full bg-transparent border-b py-1 focus:outline-none focus:border-cyan-600 focus:border-b-2 focus:mt-0.5 transition-colors peer" autocomplete="off" />
+                <label for='whyhire' className="text-gray-600 cursor-text text-sm peer-focus:text-[#003979] transition-all">
                   Why Should we hire you?
                 </label>
               </div>
               <div class="mt-4">
-                <input required value={avl} onChange={(e) => {setAvl(e.target.value)}} type="textarea" placeholder='Can you join immediately? Tell us more about you availability.' id='whenstart' className="text-gray-300 w-full bg-transparent border-b py-1 focus:outline-none focus:border-cyan-600 focus:border-b-2 focus:mt-0.5 transition-colors peer" autocomplete="off" />
-                <label for='whenstart' className="text-gray-300 cursor-text text-sm peer-focus:text-cyan-600 transition-all">
+                <input required value={avl} onChange={(e) => {setAvl(e.target.value)}} type="textarea" placeholder='Can you join immediately? Tell us more about you availability.' id='whenstart' className="text-gray-600 w-full bg-transparent border-b py-1 focus:outline-none focus:border-cyan-600 focus:border-b-2 focus:mt-0.5 transition-colors peer" autocomplete="off" />
+                <label for='whenstart' className="text-gray-600 cursor-text text-sm peer-focus:text-[#003979] transition-all">
                   When can you start working?
                 </label>
               </div>
             </div>
 
-            <div className='mt-5 flex flex-row items-center gap-3.5'>
-              <button onClick={() => {handleApply(1)}} className='px-3 py-1.5 rounded-md bg-blue-800 hover:bg-blue-900'>SUBMIT</button>
+            <div className='mt-5 text-white flex flex-row items-center gap-3.5'>
+              <button onClick={() => {handleApply(1)}} className='px-3 py-1.5 rounded-md border border-[#003979] hover:text-[#003979] bg-[#003979] hover:bg-white'>SUBMIT</button>
               <button onClick={() => {setStage(1)}} className='px-3 py-1.5 rounded-md bg-slate-400 hover:bg-slate-500'>BACK</button>
             </div>
           </div>
@@ -357,7 +363,7 @@ const ApplyJob = (props) => {
             <div className='flex flex-col items-center'>
               <div className='flex items-center text-2xl text-green-600 text-center'>Congratulations! you have successfully applied for the job.</div>
               <div className='text-center '>Rest assured your application is sent to the recruiter.</div>
-              <button onClick={() => {setStage(1)}} className='mt-4 px-3 py-1.5 rounded-md bg-slate-400 hover:bg-slate-500' >BACK</button>
+              <button onClick={() => {setStage(1)}} className='mt-4 px-3 py-1.5 text-white rounded-md bg-slate-400 hover:bg-slate-500' >BACK</button>
             </div>
           </div> : 
           </div> : 

@@ -5,7 +5,7 @@ import { useLocation } from "react-router-dom";
 import {CgProfile} from "react-icons/cg"
 import "./header.scss"
 import {MdOutlineSpaceDashboard, MdLogout} from 'react-icons/md';
-import {AiFillCaretDown} from 'react-icons/ai'
+import {AiFillCaretDown, AiOutlineUser} from 'react-icons/ai'
 const drawerWidth = 340;
 
 const Header = () => {
@@ -128,6 +128,7 @@ const Header = () => {
                               { open &&
                                 <div className="bg-white absolute right-4 shadow-lg top-8 w-[153px] rounded-lg py-1">
                                   <div onClick={() => {navigate("/dashboard"); setOpen(!open)} } className="flex flex-row px-3 py-1 text-gray-600 hover:text-black hover:bg-gray-100 hover:cursor-pointer"><MdOutlineSpaceDashboard className="h-6 mr-2" /> Dashboard</div>
+                                  <div onClick={() => {navigate("/profile"); setOpen(!open)} } className="flex flex-row px-3 py-1 text-gray-600 hover:text-black hover:bg-gray-100 hover:cursor-pointer"><AiOutlineUser className="h-6 mr-2" /> Profile</div>
                                   <div onClick={()=>logout()} className="flex flex-row px-3 py-1 text-gray-600 hover:text-black hover:bg-gray-100 hover:cursor-pointer"><MdLogout className="h-6 mr-2" /> Sign out</div>
                                 </div>
                               }

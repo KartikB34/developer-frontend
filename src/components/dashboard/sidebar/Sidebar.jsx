@@ -1,7 +1,7 @@
 import React from "react";
 import {BsBriefcase} from 'react-icons/bs';
 import {MdOutlineSpaceDashboard, MdLogout} from 'react-icons/md';
-import {AiOutlinePlusCircle} from 'react-icons/ai';
+import {AiOutlineUser} from 'react-icons/ai';
 
 import { useNavigate } from "react-router-dom";
 
@@ -103,6 +103,23 @@ const Sidebar = ({ option, setOption }) => {
         <div className="w-full border-t border-gray-200" />
 
         {/* Only Logout as of now */}
+
+        <div
+          onClick={()=>(navigate('/profile'))}
+          className={`w-full flex items-center justify-start space-x-8 px-4 cursor-pointer group hover:border-gray-900 border-l-4 border-transparent`}
+        >
+          <span>
+            <AiOutlineUser className="nav-icon" />
+          </span>
+          <h1
+            className={`text-gray-600  group-hover:text-black xl:flex hidden ${
+              option === "Posted Internships" && "text-black"
+            }`}
+          >
+            Profile
+          </h1>
+        </div>
+
 
         <div
           onClick={logout}

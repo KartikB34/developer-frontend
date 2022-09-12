@@ -3,7 +3,7 @@ import {FaEye, FaPenSquare, FaUserFriends} from "react-icons/fa"
 
 const UserCommunityDetails = () =>{
     return (<>
-    <div className="bg-gray-900 p-2 rounded mt-2">
+    <div className="bg-gray-200 shadow-md text-gray-700 p-2 rounded mt-2">
         Community Stats
         <div className="mt-2">
             <div className="font-semibold flex gap-1 text-blue-400 "><FaEye className="mt-1 " /> Views : 0 </div>

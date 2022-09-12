@@ -148,11 +148,11 @@ const EditResume = ({token, user}) =>{
 
     return (
         <>
-            <button className="bg-gray-700 rounded p-1 text-xs text-center w-full mt-1" onClick={()=>setOpenEditProfile(true)}>{user?.userResume === null ? <p>Add Resume</p> : <p>Edit Resume</p>}</button>
+            <button className="bg-gray-600 hover:bg-gray-800 rounded p-1 text-xs text-center w-full mt-1" onClick={()=>setOpenEditProfile(true)}>{user?.userResume === null ? <p>Add Resume</p> : <p>Edit Resume</p>}</button>
 
             <div className={`${openEditProfile ? 'visible ' : 'hidden '} fixed top-0 left-0 right-0 w-screen flex justify-center h-screen bg-black/50 px-2 sm:px-20`}>
-                <div className="bg-gray-800 h-min border rounded-md mt-32 p-2 mx-4 flex flex-col w-full sm:w-1/2">
-                    <div className="px-1 py-2 border-b text-lg tracking-wider font-semibold text-gray-900 dark:text-white flex items-center justify-between">
+                <div className="bg-gray-300 h-min border rounded-md mt-32 p-2 mx-4 flex flex-col w-full sm:w-1/2">
+                    <div className="px-1 py-2 border-b text-lg tracking-wider font-semibold text-gray-700 flex items-center justify-between">
                         <div>{user?.userResume === null ? <p>Add Resume</p> : <p>Edit Resume</p>}</div>
                         <div className="cursor-pointer" onClick={()=>setOpenEditProfile(false)}><MdOutlineClose size={25} /></div>
                     </div>
@@ -160,25 +160,25 @@ const EditResume = ({token, user}) =>{
                     <form onSubmit={user?.userResume === null ? addResume : updateResume}
                     className="px-1 mt-2" >
                         <div className="flex flex-col">
-                            <label className="pl-1 text-base mb-1 text-white dark:text-gray-400">Resume</label>
+                            <label className="pl-1 text-base mb-1 text-gray-700">Resume</label>
                             <input type="text"
-                                className="px-2 text-sm text-gray-300 bg-gray-900 w-full h-10 focus:outline-none rounded"
+                                className="px-2 text-sm text-gray-300 bg-gray-700 w-full h-10 focus:outline-none rounded"
                                 value={resume}
                                 onChange={(e)=>setResume(e.target.value)} />
                             <div className="text-red-700 text-sm px-1">{resumeHint}</div>
                         </div>
                         <div className="mt-2 flex flex-col">
-                            <label className="pl-1 text-base mb-1 text-white dark:text-gray-400">GitHub</label>
+                            <label className="pl-1 text-base mb-1 text-gray-700">GitHub</label>
                             <input type="text"
-                                className="px-2 text-sm text-gray-300 bg-gray-900 w-full h-10 focus:outline-none rounded"
+                                className="px-2 text-sm text-gray-300 bg-gray-700 w-full h-10 focus:outline-none rounded"
                                 value={github}
                                 onChange={(e)=>setGithub(e.target.value)} />
                             <div className="text-red-700 text-sm px-1">{githubHint}</div>
                         </div>
                         <div className="mt-2 flex flex-col">
-                            <label className="pl-1 text-base mb-1 text-white dark:text-gray-400">LinkedIn</label>
+                            <label className="pl-1 text-base mb-1 text-gray-700">LinkedIn</label>
                             <input type="text"
-                                className="px-2 text-sm text-gray-300 bg-gray-900 w-full h-10 focus:outline-none rounded"
+                                className="px-2 text-sm text-gray-300 bg-gray-700 w-full h-10 focus:outline-none rounded"
                                 value={linkedin}
                                 onChange={(e)=>setLinkedin(e.target.value)} />
                             <div className="text-red-700 text-sm px-1">{linkedinHint}</div>
