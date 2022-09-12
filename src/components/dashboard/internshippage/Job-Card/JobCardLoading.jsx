@@ -3,7 +3,7 @@ import React from "react";
 const JobCardLoading = () =>{
 
     return (
-        <div className="animate-pulse h-60 flex flex-col justify-between grow shrink basis-80 py-3 px-2 border border-gray-500 rounded-lg">
+        <div className="animate-pulse h-60 flex flex-col  grow shrink basis-80 py-3 px-2 border border-gray-500 rounded-lg">
             <div>
                 <div className="w-1/2 h-4 bg-gray-300 rounded-md"></div>
                 <div className="mt-2 w-1/4 h-4 bg-gray-300 rounded-md"></div>

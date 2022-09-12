@@ -94,9 +94,9 @@ const Header = () => {
                         <div className="absolute top-20 left-0 right-0 w-full px-2 rounded-b-md">
                             <ul className="bg-gray-200 flex flex-col items-center text-lg rounded-md transition-all">
                                 <li className="p-1 cursor-pointer hover:text-black"><a href="https://community.cryptonaukri.com/" target='_blank' className="hover:text-black">Community</a></li>
-                                <li className="p-1 cursor-pointer hover:text-black"><a href="/jobspage" className="hover:text-black">Jobs</a></li>
+                                <li className="p-1 cursor-pointer hover:text-black"><a href="/jobs" className="hover:text-black">Jobs</a></li>
                                 <li className="p-1 cursor-pointer hover:text-black"><a href="/internships" className="hover:text-black">Internships</a></li>
-                                <li className="p-1 cursor-pointer hover:text-black"><a href="/aboutus" className="hover:text-black">About us</a></li>
+                                <li className="p-1 cursor-pointer hover:text-black"><a href="/about-us" className="hover:text-black">About us</a></li>
                             </ul>
                         </div>
                     </div>
@@ -104,9 +104,9 @@ const Header = () => {
                         {location.pathname==="/dashboard" ? <></> : 
                          <ul className="flex gap-4">
                             <li className="cursor-pointer hover:text-black hover:underline hover:underline-offset-4"><a href="https://community.cryptonaukri.com/" target='_blank' className="hover:text-black">Community</a></li>
-                            <li className="cursor-pointer hover:text-black hover:underline hover:underline-offset-4"><a href="/jobspage" className="hover:text-black">Jobs</a></li>
+                            <li className="cursor-pointer hover:text-black hover:underline hover:underline-offset-4"><a href="/jobs" className="hover:text-black">Jobs</a></li>
                             <li className="cursor-pointer hover:text-black hover:underline hover:underline-offset-4"><a href="/internships" className="hover:text-black">Internships</a></li>
-                            <li className="cursor-pointer hover:text-black hover:underline hover:underline-offset-4"><a href="/aboutus" className="hover:text-black">About us</a></li>
+                            <li className="cursor-pointer hover:text-black hover:underline hover:underline-offset-4"><a href="/about-us" className="hover:text-black">About us</a></li>
                          </ul>
                         }
                     </div>
@@ -137,8 +137,8 @@ const Header = () => {
                         </div>
                         :
                         <div className="flex items-center gap-3">
-                            <a href="/companyLogin"><li className="mt-2 flex gap-2 items-center hover:text-black cursor-pointer"><span>Login</span></li></a>
-                            <a href="/companySignUp"><li className="mt-2 flex gap-2 items-center hover:text-black cursor-pointer"><span>Sign up</span></li></a>
+                            <a href="/auth/devlogin"><li className="mt-2 flex gap-2 items-center hover:text-black cursor-pointer"><span>Login</span></li></a>
+                            <a href="/auth/devsignup"><li className="mt-2 flex gap-2 items-center hover:text-black cursor-pointer"><span>Sign up</span></li></a>
                         </div>
                     }
                     {location.pathname==="/dashboard" ? <></> :

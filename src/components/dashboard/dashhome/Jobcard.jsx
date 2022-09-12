@@ -28,10 +28,6 @@ const Jobcard = ({setOption}) => {
         });
     } ,[]);
 
-  //   const handleApply = ({srId}) => {
-  //     navigate(`/jobapplication?id=${srId}&type=job`)                  //onClick={handleApply(job._id)}
-  // }
-
   return (
     <div>
       <div className="p-4 my-6 shadow-xl bg-gray-100">
@@ -62,7 +58,7 @@ const Jobcard = ({setOption}) => {
           <span
             className={`text-xs font-medium uppercase tracking-wider text-gray-800 rounded-lg bg-opacity-50`}>
             <div className='text-white'>
-                <button className="px-3 py-2 hover:text-[#003979] border border-[#003979] rounded-md bg-[#003979] hover:bg-white">Details</button>
+                <button onClick={()=> {navigate(`/jobapplication?id=${job._id}&type=job`)}} className="px-3 py-2 hover:text-[#003979] border border-[#003979] rounded-md bg-[#003979] hover:bg-white">Details</button>
             </div>
           </span>
           </td>
@@ -91,7 +87,7 @@ const Jobcard = ({setOption}) => {
             <span
               className={`p-1.5 text-xs font-medium uppercase tracking-wider text-gray-800 bg-gray-200 rounded-lg bg-opacity-50`}>
               <div className='text-white'>
-                <button className="px-3 py-2 hover:text-[#003979] border border-[#003979] rounded-md bg-[#003979] hover:bg-white">Details</button>
+                <button onClick={()=> {navigate(`/jobapplication?id=${job._id}&type=job`)}} className="px-3 py-2 hover:text-[#003979] border border-[#003979] rounded-md bg-[#003979] hover:bg-white">Details</button>
               </div>
             </span>
           </div>

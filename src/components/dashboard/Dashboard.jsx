@@ -7,7 +7,7 @@ import DashHome from "./dashhome/DashHome";
 
 const Dashboard = () => {
 
-  const [option, setOption] = useState("Jobs")              // chanage this to User Dashboard
+  const [option, setOption] = useState("User Dashboard")              // chanage this to User Dashboard
 
   return (
     <div>
