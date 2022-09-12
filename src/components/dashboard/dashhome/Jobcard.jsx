@@ -1,6 +1,30 @@
-import React from 'react'
+import React,{useState, useEffect} from 'react'
+import Axios from 'axios';
 
-const Jobcard = ({buisnessDetails, setOption}) => {
+const Jobcard = ({setOption}) => {
+
+  const [dataArr, setDataArr] = useState([]);
+    const [loading, setLoading] = useState(false);
+    // const [datarr, setDataArr] = React.useState([]);
+
+
+    useEffect(async ()=>{
+        setLoading(true);
+        const response = await Axios.get(`${process.env.REACT_APP_API_ENDPOINT}/api/v1/jobs/findJob`)
+        .then((res)=>{
+            //console.log(res);
+            const resp = res.data;
+            //console.log(resp.data);
+            setDataArr(resp.data);
+            //console.log(dataArr);
+            setLoading(false);
+            // setLoading(true);
+            
+        })
+        .catch((err)=>{
+            setLoading(false);
+        });
+    } ,[]);
 
   return (
     <div>
@@ -19,7 +43,7 @@ const Jobcard = ({buisnessDetails, setOption}) => {
         </tr>
         </thead>
 
-        {buisnessDetails.jobsAdded.reverse().slice(0,3).map((job) => (
+        {dataArr.reverse().slice(0,3).map((job) => (
 
         <tbody className="divide-y divide-gray-100 ">
         <tr className="bg-white">
@@ -37,12 +61,12 @@ const Jobcard = ({buisnessDetails, setOption}) => {
 
         ))}
       </table>
-      {buisnessDetails.jobsAdded.length===0?<div className='text-center my-4'>You have not yet posted any Job</div>:<></>}
+      {dataArr.jobsAdded.length===0?<div className='text-center my-4'>You have not yet posted any Job</div>:<></>}
     </div>
  
     <div className="flex flex-col w-full md:hidden">
 
-    {buisnessDetails.jobsAdded.reverse().slice(0,3).map((job) => (
+    {dataArr.reverse().slice(0,3).map((job) => (
       <div className="bg-white space-y-3 p-4 my-2 rounded-lg shadow">
         <div className="text-sm text-gray-700">
           {job.jobTitle}
@@ -60,11 +84,11 @@ const Jobcard = ({buisnessDetails, setOption}) => {
       </div>
     ))}
 
-    {buisnessDetails.internshipsAdded.length===0?<div className='text-center my-4'>You have not yet posted any jobs</div>:<></>}
+    {dataArr.internshipsAdded.length===0?<div className='text-center my-4'>You have not yet posted any jobs</div>:<></>}
       
     </div>
     <div className='w-full my-2 flex items-end relative'>
-      {buisnessDetails.jobsAdded.length===0?<></>:<div onClick={() => {setOption("Posted Jobs")}} className='text-red-400 right-5 top-1 absolute hover:cursor-pointer'>see all..</div>}
+      {dataArr.jobsAdded.length===0?<></>:<div onClick={() => {setOption("Posted Jobs")}} className='text-red-400 right-5 top-1 absolute hover:cursor-pointer'>see all..</div>}
     </div>
    </div>
     </div>

@@ -1,17 +1,13 @@
 import React, {useState} from "react";
 import Sidebar from "./sidebar/Sidebar";
-import DashHome from "./dashhome/DashHome"
 
-import Yourinternships from "./yourinternships/YourInternships"
-import Yourjobs from "./yourjobs/YourJobs"
-import Addjob from "./addJob/Addjob"
+import JobsPage from "./jobspage/JobsPage";
+import InternshipPage from "./internshippage/internshipPage";
+import DashHome from "./dashhome/DashHome";
 
-import JobsPage from "../JobsPage";
-import InternshipPage from "../internshipPage";
+const Dashboard = () => {
 
-const Dashboard = ({buisnessDetails}) => {
-
-  const [option, setOption] = useState("dashboard")
+  const [option, setOption] = useState("Jobs")
 
   return (
     <div>
@@ -20,9 +16,10 @@ const Dashboard = ({buisnessDetails}) => {
         
         <div className="w-[100%]">
           {/* <DashHome /> */}
+          {option === "dashboard" && <DashHome setOption={setOption}/>}
           {/* {option === "User Dashboard" && <DashHome buisnessDetails={buisnessDetails} setOption={setOption}/>} */}
-          {option === "Jobs" && <JobsPage buisnessDetails={buisnessDetails} setOption={setOption}/>}
-          {option === "Internships" && <InternshipPage buisnessDetails={buisnessDetails} setOption={setOption}/>}
+          {option === "Jobs" && <JobsPage setOption={setOption}/>}
+          {option === "Internships" && <InternshipPage setOption={setOption}/>}
           {/* {option === "Add job" && <Addjob/>} */}
         </div>
       </div>

@@ -78,7 +78,7 @@ const App = () => {
         <ToastContainer />
         {/* <ThemeProvider theme={theme}> */}
           <Header />
-          <div>
+          <div className="mt-16">
             <Routes>
               <Route path="/" element={<LandingPage />}></Route>
               <Route
