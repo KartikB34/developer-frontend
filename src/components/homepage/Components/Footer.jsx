@@ -19,7 +19,7 @@ const Footer = () => {
             <div className="flex flex-col my-8 md:my-0 md:items-start">
               <b className="mb-3 text-lg">Support</b>
               <a href="/contactus" target="_blank">Contact</a>
-              <a href="https://discord.com/" target="_blank" className="my-1">Discord</a>
+              <a href="https://discord.gg/r9bpXkqSzH" target="_blank" className="my-1">Discord</a>
               <a href="/dcma" target="_blank">DCMA</a>
             </div>
 
