@@ -33,6 +33,7 @@ import AuthDevLogout from "./components/auth/Logout";
 
 import { useCookies } from "react-cookie";
 import axios from "axios";
+import Google from "./components/auth/Google";
 
 const App = () => {
 
@@ -87,6 +88,7 @@ const App = () => {
               ></Route>
               <Route path="/details" element={<JobDetails />}></Route>
               <Route path="/jobapplication" element={<ApplyJob />}></Route>
+              <Route path="/auth/google" element={<Google setCookie={setCookie} />}></Route>
               <Route path="/loginsignup" element={<LoginSignup />}></Route>
               <Route path="/dev-login" element={<Login route="user" />}></Route>
               <Route

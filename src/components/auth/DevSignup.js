@@ -12,6 +12,8 @@ const Signup = ({ setCookie }) => {
   var redirectType = url.searchParams.get('redirecttype');
   var redirectid = url.searchParams.get('redirectid');
 
+
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [firstName, setFirstName] = useState('');
@@ -46,6 +48,15 @@ const Signup = ({ setCookie }) => {
   const [loading, setLoading] = useState(false);
 
   var API = process.env.REACT_APP_API_ENDPOINT;
+  const Google_API = "https://cryptonaukribackendtest.herokuapp.com/api/v1/user/googleSignup";
+  // const Google_API = "https://cryptonaukribackend.herokuapp.com/api/v1/user/googleSignup";
+
+  const googleSignup = async () => {
+
+    const response = await Axios.get(`${Google_API}`);
+    console.log(response);
+    window.location.replace(response.data.reDirectURL)
+  }
 
   useEffect(() => {
     var url_string = window.location.href;
@@ -61,7 +72,7 @@ const Signup = ({ setCookie }) => {
 
   //console.log(process.env.REACT_APP_PRODUCTION_API_ENDPOINT);
 
-  const handleSendOtp = (event) => {
+  const handleSendOtp =  (event) => {
     event.preventDefault();
     setLoading(true);
     setSignUpError('');
@@ -211,9 +222,7 @@ const Signup = ({ setCookie }) => {
         <br />
         <br />
         <br />
-        <br />
-        <br />
-        <br />
+        <button onClick={googleSignup}>Sign up with google</button>
 
         <div className='bg-white shadow-2xl rounded pt-2 pb-16 ml-3 mr-3'>
           <br />
@@ -231,7 +240,8 @@ const Signup = ({ setCookie }) => {
               )}
 
               <p className='text-blue-400 '>Your Name</p>
-              <div className='flex items-center rounded shadow-sm mb-4 gap-x-2'>
+
+              <div className='flex items-center rounded shadow-sm mb-4'>
                 <input
                   value={firstName}
                   onChange={(e) => {
@@ -239,23 +249,28 @@ const Signup = ({ setCookie }) => {
                   }}
                   className='p-2 text-gray-900 w-full h-12 focus:ring-2 focus:ring-blue-600 focus:outline-none rounded'
                   type='text'
-                  placeholder='First Name '
+                  placeholder='First name '
                   autocomplete='do-not-autofill'
                 />
+              </div>
+
+              <div className='flex items-center rounded shadow-sm mb-4'>
                 <input
                   value={lastName}
                   onChange={(e) => {
                     setLastName(e.target.value);
                   }}
-                  className='p-2 text-gray-900  w-full h-12 focus:ring-2 focus:ring-blue-600 focus:outline-none rounded'
+                  className='p-2 text-gray-900 w-full h-12 focus:ring-2 focus:ring-blue-600 focus:outline-none rounded'
                   type='text'
-                  placeholder='Last Name '
+                  placeholder='Last name '
                   autocomplete='do-not-autofill'
                 />
               </div>
 
               <p className='text-blue-400 '>Email and Mobile Number</p>
-              <div className='flex items-center  rounded shadow-sm mb-4 gap-x-2'>
+
+
+              <div className='flex items-center rounded shadow-sm mb-4'>
                 <input
                   value={email}
                   onChange={(e) => {
@@ -266,6 +281,9 @@ const Signup = ({ setCookie }) => {
                   placeholder='Email '
                   autocomplete='do-not-autofill'
                 />
+              </div>
+
+              <div className='flex items-center rounded shadow-sm mb-4'>
                 <input
                   value={phoneNumber}
                   onChange={(e) => {
@@ -273,7 +291,7 @@ const Signup = ({ setCookie }) => {
                   }}
                   className='p-2 text-gray-900 w-full h-12 focus:ring-2 focus:ring-blue-600 focus:outline-none rounded'
                   type='text'
-                  placeholder='Mobile Number'
+                  placeholder='Phone number '
                   autocomplete='do-not-autofill'
                 />
               </div>
