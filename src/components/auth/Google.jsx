@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useSearchParams } from 'react-router-dom';
 import Axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { Oval } from "react-loader-spinner";
 
 const Google = ({ setCookie }) => {
 
@@ -75,8 +76,8 @@ const Google = ({ setCookie }) => {
    
 
   return (
-    <div className='min-h-[70vh]'>
-      Google
+    <div className='min-h-[70vh] flex items-center justify-center'>
+      <Oval color="#003979" height={70} width={70} />
     </div>
   )
 }
