@@ -24,8 +24,8 @@ const Login = ({ setCookie }) => {
   // const [nPassWrongs, setNPassWrongs] = useState(0);
 
   const API = process.env.REACT_APP_API_ENDPOINT;
-  const Google_API = "https://cryptonaukribackendtest.herokuapp.com/api/v1/user/googleSignup";
-  // const Google_API = "https://cryptonaukribackend.herokuapp.com/api/v1/user/googleSignup";
+  // const Google_API = "https://cryptonaukribackendtest.herokuapp.com/api/v1/user/googleSignup";          // To work on LocalHost
+  const Google_API = "https://cryptonaukribackend.herokuapp.com/api/v1/user/googleSignup";
 
   const googleSignup = async () => {
 

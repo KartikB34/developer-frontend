@@ -49,9 +49,9 @@ const Signup = ({ setCookie }) => {
   const [signUpError, setSignUpError] = useState('');
   const [loading, setLoading] = useState(false);
 
-  var API = process.env.REACT_APP_API_ENDPOINT;
-  const Google_API = "https://cryptonaukribackendtest.herokuapp.com/api/v1/user/googleSignup";
-  // const Google_API = "https://cryptonaukribackend.herokuapp.com/api/v1/user/googleSignup";
+  var API = process.env.REACT_APP_API_ENDPOINT; 
+  // const Google_API = "https://cryptonaukribackendtest.herokuapp.com/api/v1/user/googleSignup";            //To work on Local Host
+  const Google_API = "https://cryptonaukribackend.herokuapp.com/api/v1/user/googleSignup";
 
   const googleSignup = async () => {
 

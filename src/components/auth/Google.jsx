@@ -19,7 +19,8 @@ const Google = ({ setCookie }) => {
   const [loading, setLoading] = useState(false);
 
     // const API = process.env.REACT_APP_API_ENDPOINT;
-    const API = "https://cryptonaukribackendtest.herokuapp.com";
+    // const API = "https://cryptonaukribackendtest.herokuapp.com";              // Will work on LocalHost
+    const API = "https://cryptonaukribackend.herokuapp.com";
     const [searchParams] = useSearchParams();
     const sendBackend = async (code) => {
         const response = await Axios.get(`${API}/api/v1/user/googleUserInfo`, {
