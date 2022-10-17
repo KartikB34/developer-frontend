@@ -7,3 +7,9 @@
 * {
     font-family: Be Vietnam Pro, sans-serif ;
 }
+
+@layer components {
+    .nav-icon{
+        @apply w-6 h-6 cursor-pointer   /*to apply tailwindCSS property*/
+    }
+  }  
