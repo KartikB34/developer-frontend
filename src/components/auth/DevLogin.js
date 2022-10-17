@@ -6,6 +6,8 @@ import {AiOutlineUser} from 'react-icons/ai'
 import {MdLockOutline} from 'react-icons/md'
 import { Oval } from "react-loader-spinner";
 
+import {FcGoogle} from "react-icons/fc"
+
 const Login = ({ setCookie }) => {
   const navigate = useNavigate();
 
@@ -24,6 +26,14 @@ const Login = ({ setCookie }) => {
   const API = process.env.REACT_APP_API_ENDPOINT;
   const Google_API = "https://cryptonaukribackendtest.herokuapp.com/api/v1/user/googleSignup";
   // const Google_API = "https://cryptonaukribackend.herokuapp.com/api/v1/user/googleSignup";
+
+  const googleSignup = async () => {
+
+    const response = await Axios.get(`${Google_API}`);
+    console.log(response);
+    window.location.replace(response.data.reDirectURL)
+  }
+
 
   const [values, setValues] = useState({
     showPassword: false,
@@ -131,8 +141,9 @@ const Login = ({ setCookie }) => {
       <div className='w-full flex flex-col md:flex-row items-center justify-center flex-1 text-center '>
         <div className='w-full md:w-3/5 p-5'>  {/* Login Section */}
         {/* <img src={logo} alt='logo' className='h-10' /> */}
-        <div className='py-10'>
+        <div className='py-10 flex flex-col justify-center items-center'>
             <h2 className='text-3xl font-bold text-[#003979] mb-8'>Sign in to account</h2>
+            <button onClick={googleSignup} className='border border-[#003979] font-semibold rounded-lg mb-8 px-12 py-2 text-[#003979] hover:shadow-lg flex items-center'>Continue with google <FcGoogle className='ml-2 text-xl'/></button>
             <div className='border-4 w-10 border-[#003979] inline-block mb-2' />
 
             {/* Input Divs below */}
@@ -160,7 +171,7 @@ const Login = ({ setCookie }) => {
 
         </div>
         </div>
-        <div className='w-full md:w-2/5 md:h-[492px] bg-[#003979] text-white px-12 py-36'>  {/* signup Section */}
+        <div className='w-full md:w-2/5 bg-[#003979] text-white px-12 py-36'>  {/* signup Section */}
             <h2 className='text-3xl text-white font-bold mb-2'>Hello, developer!</h2>
             <div className='border-4 w-10 border-white inline-block mb-2' />
             <div className='90%'>

@@ -75,7 +75,7 @@ const Google = ({ setCookie }) => {
    
 
   return (
-    <div>
+    <div className='min-h-[70vh]'>
       Google
     </div>
   )

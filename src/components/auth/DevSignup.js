@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Axios from 'axios';
 
+import {FcGoogle} from "react-icons/fc"
+
 const INITIAL_COUNT = 600;
 
 const Signup = ({ setCookie }) => {
@@ -218,13 +220,15 @@ const Signup = ({ setCookie }) => {
 
   return (
     <main className='bg-gray-300 login-tailwind-font'>
-      <div className='max-w-xl mx-auto rounded bg-gray-300'>
+      <div className='max-w-xl mx-auto rounded items-center flex flex-col justify-center bg-gray-300'>
         <br />
         <br />
         <br />
-        <button onClick={googleSignup}>Sign up with google</button>
-
-        <div className='bg-white shadow-2xl rounded pt-2 pb-16 ml-3 mr-3'>
+        <button onClick={googleSignup} className='border border-white font-semibold rounded-lg mb-8 px-12 py-2 hover:bg-white hover:text-[#003979] flex items-center'>Continue with google <FcGoogle className='ml-2 text-xl'/></button>
+        {/* <br /> */}
+        <p className='text-xl font-semibold'>OR</p>
+        <br />
+        <div className='bg-white shadow-2xl w-full rounded pt-2 pb-16 ml-3 mr-3'>
           <br />
           <div className='text-center text-gray-700 mb-6 text-2xl font-semibold'>
             👷 Developer Sign-Up
