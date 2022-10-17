@@ -28,7 +28,7 @@ const Login = ({ setCookie }) => {
   const Google_API = "https://cryptonaukribackend.herokuapp.com/api/v1/user/googleSignup";
 
   const googleSignup = async () => {
-
+    setLoading(true);
     const response = await Axios.get(`${Google_API}`);
     console.log(response);
     window.location.replace(response.data.reDirectURL)
