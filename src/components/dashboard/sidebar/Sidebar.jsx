@@ -31,7 +31,7 @@ const Sidebar = ({ option, setOption }) => {
           </span>
           <h1
             className={`text-gray-600  group-hover:text-black xl:flex hidden ${
-              option === "User Dashboard" && "text-black"
+              option === "User Dashboard" && "text-black font-semibold"
             }`}
           >
             Dashboard
@@ -51,7 +51,7 @@ const Sidebar = ({ option, setOption }) => {
           </span>
           <h1
             className={`text-gray-600  group-hover:text-black xl:flex hidden ${
-              option === "Jobs" && "text-black"
+              option === "Jobs" && "text-black font-semibold"
             }`}
           >
             Jobs
@@ -105,15 +105,17 @@ const Sidebar = ({ option, setOption }) => {
         {/* Only Logout as of now */}
 
         <div
-          onClick={()=>(navigate('/profile'))}
-          className={`w-full flex items-center justify-start space-x-8 px-4 cursor-pointer group hover:border-gray-900 border-l-4 border-transparent`}
+          onClick={() => {setOption("Profile")}}
+          className={`w-full flex items-center justify-start space-x-8 px-4 cursor-pointer group hover:border-gray-900 border-l-4 border-transparent ${
+            option === "Profile" && "border-gray-900"
+            }`}
         >
-          <span>
+          <span className={`${option === "Profile"? "text-black font-semibold" : "text-gray-600"}`}>
             <AiOutlineUser className="nav-icon" />
           </span>
           <h1
             className={`text-gray-600  group-hover:text-black xl:flex hidden ${
-              option === "Posted Internships" && "text-black"
+              option === "Profile" && "text-black font-semibold"
             }`}
           >
             Profile

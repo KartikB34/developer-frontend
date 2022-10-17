@@ -12,6 +12,7 @@ import SideProfile from './SideProfile';
 import Security from './Security';
 
 
+
 const Profile = () => {
   // will be swtiched to custom hooks later
   const navigate = useNavigate();
@@ -87,9 +88,7 @@ const Profile = () => {
   <main className="">
       <br/>
       <br/>
-      <br/>
-      <br/>
-      <br/>
+   
       <div className="gap-1 text-white max-w-7xl m-auto p-2 block md:flex">
           <div className=" w-100 md:w-4/12 gap-2">
               <BasicUserDetails user={user} token={token} />

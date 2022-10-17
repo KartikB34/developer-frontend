@@ -4,6 +4,7 @@ import Sidebar from "./sidebar/Sidebar";
 import JobsPage from "./jobspage/JobsPage";
 import InternshipPage from "./internshippage/internshipPage";
 import DashHome from "./dashhome/DashHome";
+import Profile from "../User/UserDashbaord";
 
 const Dashboard = () => {
 
@@ -20,7 +21,7 @@ const Dashboard = () => {
           {/* {option === "User Dashboard" && <DashHome buisnessDetails={buisnessDetails} setOption={setOption}/>} */}
           {option === "Jobs" && <JobsPage setOption={setOption}/>}
           {option === "Internships" && <InternshipPage setOption={setOption}/>}
-          {/* {option === "Add job" && <Addjob/>} */}
+          {option === "Profile" && <Profile/>}
         </div>
       </div>
     </div>

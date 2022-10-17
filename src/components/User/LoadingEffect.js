@@ -1,10 +1,7 @@
 import UserApplicationsDetails from "./Applications";
 const Loading = () =>{
     return(<>
-    <main className='bg-gray-800'>
-          <br />
-          <br />
-          <br />
+    <main className=''>
           <br />
           <br />
           <div className='gap-1 text-white max-w-7xl m-auto p-2 block md:flex'>
