@@ -23,7 +23,7 @@ const Google = ({ setCookie }) => {
     const API = "https://cryptonaukribackend.herokuapp.com";
     const [searchParams] = useSearchParams();
     const sendBackend = async (code) => {
-        const response = await Axios.get(`${API}/api/v1/user/googleUserInfo`, {
+        const response = await Axios.get(`${API}/api/v1/user/googleUserInfo?client=jobportal`, {
            params : {code}
           });
 

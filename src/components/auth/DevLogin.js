@@ -24,8 +24,8 @@ const Login = ({ setCookie }) => {
   // const [nPassWrongs, setNPassWrongs] = useState(0);
 
   const API = process.env.REACT_APP_API_ENDPOINT;
-  // const Google_API = "https://cryptonaukribackendtest.herokuapp.com/api/v1/user/googleSignup";          // To work on LocalHost
-  const Google_API = "https://cryptonaukribackend.herokuapp.com/api/v1/user/googleSignup";
+  // const Google_API = "https://cryptonaukribackendtest.herokuapp.com/api/v1/user/googleSignup?client=localhost";          // To work on LocalHost
+  const Google_API = "https://cryptonaukribackend.herokuapp.com/api/v1/user/googleSignup?client=jobportal";
 
   const googleSignup = async () => {
     setLoading(true);
@@ -143,7 +143,7 @@ const Login = ({ setCookie }) => {
         {/* <img src={logo} alt='logo' className='h-10' /> */}
         <div className='py-10 flex flex-col justify-center items-center'>
             <h2 className='text-3xl font-bold text-[#003979] mb-8'>Sign in to account</h2>
-            <button onClick={googleSignup} className='border border-[#003979] font-semibold rounded-lg mb-8 px-12 py-2 text-[#003979] hover:shadow-lg flex items-center'>Continue with google <FcGoogle className='ml-2 text-xl'/></button>
+            <button onClick={googleSignup} className='border border-[#003979] font-semibold rounded-lg mb-8 px-2 md:px-12 py-2 text-[#003979] hover:shadow-lg flex items-center'>Continue with google <FcGoogle className='ml-2 text-xl'/></button>
             <div className='border-4 w-10 border-[#003979] inline-block mb-2' />
 
             {/* Input Divs below */}

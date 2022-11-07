@@ -50,8 +50,8 @@ const Signup = ({ setCookie }) => {
   const [loading, setLoading] = useState(false);
 
   var API = process.env.REACT_APP_API_ENDPOINT; 
-  // const Google_API = "https://cryptonaukribackendtest.herokuapp.com/api/v1/user/googleSignup";            //To work on Local Host
-  const Google_API = "https://cryptonaukribackend.herokuapp.com/api/v1/user/googleSignup";
+  // const Google_API = "https://cryptonaukribackendtest.herokuapp.com/api/v1/user/googleSignup?client=localhost";            //To work on Local Host
+  const Google_API = "https://cryptonaukribackend.herokuapp.com/api/v1/user/googleSignup?client=jobportal";
 
   const googleSignup = async () => {
 
@@ -224,7 +224,7 @@ const Signup = ({ setCookie }) => {
         <br />
         <br />
         <br />
-        <button onClick={googleSignup} className='border border-white font-semibold rounded-lg mb-8 px-12 py-2 hover:bg-white hover:text-[#003979] flex items-center'>Continue with google <FcGoogle className='ml-2 text-xl'/></button>
+        <button onClick={googleSignup} className='border border-white font-semibold rounded-lg mb-8 px-2 md:px-12 py-2 hover:bg-white hover:text-[#003979] flex items-center'>Continue with google <FcGoogle className='ml-2 text-xl'/></button>
         {/* <br /> */}
         <p className='text-xl font-semibold'>OR</p>
         <br />
